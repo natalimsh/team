@@ -73,13 +73,13 @@
 .modal-content h2 {
   color: #1e40af;
 }
-.page-enter {
+.page-fade-enter {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition: opacity 1.5s ease, transform 1.5s ease; /* Збільшено з 0.5s до 1.5s */
 }
 
-.page-enter-active {
+.page-fade-enter-active {
   opacity: 1;
   transform: translateY(0);
 }

@@ -35,8 +35,9 @@ const HomePage = () => {
       <section id="hero" className="hero-section">
         <div className="container">
           <h2>Інновації. Професіоналізм. Результат.</h2>
-          <p>Ми - команда талановитих розробників, які створюють виняткові веб-рішення.</p>
-          <button
+<p style={{ whiteSpace: 'nowrap' }}>
+  Ми - команда талановитих розробників, які створюють виняткові веб-рішення.
+</p>          <button
             type="button"
             onClick={() => scrollToSection('team-section')}
             className="button primary-button"
