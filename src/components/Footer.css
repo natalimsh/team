@@ -1,0 +1,133 @@
+
+.main-footer {
+    background-color: var(--header-footer-bg); /* Колір залежить від теми */
+    color: var(--footer-text-color);
+    padding: 40px 0 0;
+    border-top: 1px solid var(--border-color);
+    transition: background-color 0.4s ease, border-color 0.4s ease;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+    max-width: 1200px; /* Використовуємо тут container */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
+}
+
+.footer-section h3 {
+    color: var(--text-color); /* Заголовок секції футера */
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+
+.footer-section p,
+.footer-section ul {
+    font-size: 0.95em;
+    line-height: 1.7;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section a {
+    color: var(--footer-link-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: var(--footer-link-hover-color);
+}
+
+.social-icons-footer {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+/* Styling for the social icon links themselves */
+.social-icon-link {
+    display: flex; /* Use flex to center the icon */
+    justify-content: center;
+    align-items: center;
+    width: 40px; /* Adjust size as needed */
+    height: 40px; /* Adjust size as needed */
+    border-radius: 50%;
+    background-color: var(--primary-color); /* Background color for the circle */
+    color: white; /* Color of the icon */
+    transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icon-link:hover {
+    background-color: var(--link-hover-color); /* Hover background color */
+    transform: translateY(-3px); /* Lift effect on hover */
+    color: white; /* Ensure icon color stays white on hover */
+}
+
+/* Styling for the react-icons SVG element inside the link */
+.social-icon-link svg {
+    /* react-icons create an SVG element, we can style it directly */
+    fill: currentColor; /* Inherit color from parent (the link) */
+    transition: fill 0.3s ease;
+}
+
+/* Adjust icon color for dark theme if necessary (react-icons usually handle this well by inheriting currentColor) */
+body.dark-theme .social-icon-link {
+    background-color: var(--primary-color); /* Use primary color for dark theme */
+    color: var(--text-color); /* Icon color for dark theme */
+}
+
+body.dark-theme .social-icon-link:hover {
+    background-color: var(--link-hover-color);
+    color: var(--text-color);
+}
+
+
+.footer-bottom {
+    border-top: 1px solid var(--border-color);
+    padding: 20px 0;
+    text-align: center;
+    font-size: 0.85em;
+    color: var(--footer-text-color);
+}
+
+.footer-bottom .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-bottom p {
+    margin: 5px 0;
+}
+
+.footer-bottom a {
+    color: var(--footer-link-color);
+}
+.footer-bottom a:hover {
+    color: var(--footer-link-hover-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr; /* Одна колонка на малих екранах */
+        text-align: center;
+    }
+
+    .footer-section {
+        margin-bottom: 20px;
+    }
+
+    .social-icons-footer {
+        justify-content: center; /* Центруємо іконки у футері */
+    }
+}

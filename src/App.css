@@ -1,0 +1,419 @@
+/* src/App.css */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+/* Загальні змінні кольорів для легкого налаштування теми */
+:root {body {
+  font-family: 'Dancing Script', cursive; /* Застосовуємо шрифт до всього тіла документа */
+}
+
+  --primary-color: #007bff; /* Основний акцентний колір (синій) */
+  --accent-color: #6c757d; /* Додатковий акцентний колір (сірий) */
+  --text-color-dark: #333; /* Темний текст */
+  --text-color-light: #666; /* Світліший текст */
+  --background-color-light: #f4f7f6; /* Світлий фон сторінки */
+  --card-background-color: #ffffff; /* Фон для карток */
+  --button-background: #e9ecef; /* Фон кнопок за замовчуванням */
+  --button-text-color: #333; /* Колір тексту кнопок */
+  --button-border-color: #dee2e6; /* Колір рамки кнопок */
+  --disabled-button-background: #f8f9fa; /* Колір вимкнених кнопок */
+  --disabled-button-text: #adb5bd; /* Колір тексту вимкнених кнопок */
+  --disabled-button-border: #e9ecef; /* Колір рамки вимкнених кнопок */
+  --header-height: 80px; /* Приклад висоти шапки */
+  --footer-height: 60px; /* Приклад висоти футера */
+}
+
+/* Для темної теми (якщо ви її використовуєте, це переозначить змінні вище) */
+.dark-theme {
+  --text-color-dark: #e0e0e0;
+  --text-color-light: #b0b0b0;
+  --background-color-light: #2c2c2c;
+  --card-background-color: #3a3a3a;
+  --button-background: #555;
+  --button-text-color: #eee;
+  --button-border-color: #666;
+  --disabled-button-background: #444;
+  --disabled-button-text: #888;
+  --disabled-button-border: #555;
+}
+
+
+/* Загальні стилі для TeamSection, щоб він виглядав як контейнер розробників */
+.team-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - var(--header-height, 80px) - var(--footer-height, 60px));
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: var(--background-color-light);
+}
+
+.team-section .container {
+    max-width: 800px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.team-section h2 {
+  font-size: 2.5em;
+  color: var(--text-color-dark);
+  margin-bottom: 10px;
+}
+
+.team-section p {
+    font-size: 1.2em;
+    color: var(--text-color-light);
+    margin-bottom: 10px;
+}
+
+/* Контейнер для однієї картки члена команди */
+.team-single-view {
+  width: 100%;
+  max-width: 750px;
+  margin-bottom: 1px;
+  display: flex;
+  justify-content: center;
+  perspective: 1000px;
+}
+
+/* Стилі для самої картки члена команди */
+.team-member-card {
+  background-color: var(--card-background-color);
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  padding: 10px; /* ЗМІНЕНО: Всюди 15px */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all 0.5s ease-in-out;
+  width: 100%;
+  min-height: 100px; /* Можливо, потрібно буде скоригувати, якщо вміст не поміщається */
+  position: relative;
+}
+
+.team-member-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+/* Стилі для фото члена команди */
+.member-photo {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border: 8px solid var(--primary-color);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.member-name {
+  font-size: 2.8em;
+  color: var(--text-color-dark);
+  margin-bottom: 5px;
+}
+
+.member-role {
+  font-size: 1.4em;
+  color: var(--text-color-light);
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+.member-bio {
+  font-size: 1.15em;
+  color: var(--text-color-dark);
+  line-height: 1.8;
+  margin-bottom: 35px;
+  max-width: 550px;
+}
+
+/* Стилі для соціальних посилань */
+.social-links {
+  margin-top: 30px;
+  display: flex;
+  gap: 10px;
+}
+
+.social-links .social-icon {
+  font-size: 1.7em;
+  color: var(--text-color-light);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links .social-icon:hover {
+  color: var(--primary-color);
+  transform: scale(1.2);
+}
+
+/* Стилі для навичок */
+.developer-skills-large {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.developer-skills-large h4 {
+  font-size: 1.3em;
+  color: var(--text-color-dark);
+  margin-bottom: 18px;
+}
+
+.developer-skills-large ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.developer-skills-large li {
+  background-color: var(--accent-color);
+  color: #ffffff;
+  padding: 10px 22px;
+  border-radius: 30px;
+  font-size: 1em;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.developer-skills-large li:hover {
+  background-color: var(--primary-color);
+  transform: translateY(-3px);
+}
+
+/* Стилі для "Прикольної" Пагінації */
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 15px;
+  padding: 20px 30px;
+  background-color: var(--card-background-color);
+  border-radius: 40px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  flex-wrap: wrap;
+}
+
+.pagination-controls button {
+  background-color: var(--button-background);
+  color: var(--button-text-color);
+  border: none;
+  padding: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2em;
+  font-weight: bold;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  min-width: 50px;
+  height: 50px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination-controls button:hover:not(:disabled) {
+  background-color: var(--primary-color);
+  color: #fff;
+  transform: translateY(-5px) scale(1.08);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.pagination-controls button:disabled {
+  background-color: var(--disabled-button-background);
+  color: var(--disabled-button-text);
+  cursor: not-allowed;
+  opacity: 0.7;
+  box-shadow: none;
+  transform: none;
+}
+
+.pagination-controls button.active-page {
+  background-color: var(--primary-color);
+  color: #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transform: scale(1.15);
+  pointer-events: none;
+  font-size: 1.3em;
+}
+
+/* Стилі для SVG-іконок з react-icons */
+.pagination-controls button svg {
+  font-size: 1.5em;
+  vertical-align: middle;
+  color: var(--button-text-color);
+}
+
+.pagination-controls button:hover:not(:disabled) svg {
+  color: #fff;
+}
+
+.pagination-controls button.active-page svg {
+  color: #fff;
+}
+
+.pagination-controls button:disabled svg {
+  color: var(--disabled-button-text);
+}
+
+/* Стилі для кнопок "Перша/Остання сторінка" */
+.pagination-controls .pagination-first-last {
+    min-width: 45px;
+    height: 45px;
+    padding: 10px;
+    border-radius: 50%;
+}
+.pagination-controls .pagination-first-last svg {
+    font-size: 1.3em;
+}
+
+/* Стилі для еліпсису (...) */
+.pagination-controls .pagination-ellipsis {
+    color: var(--text-color-light);
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 15px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 30px;
+}
+
+.pagination-controls .page-info {
+  font-size: 1.2em;
+  color: var(--text-color-dark);
+  margin: 0 15px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* Адаптивність для менших екранів */
+@media (max-width: 768px) {
+  .team-section {
+    padding: 15px;
+  }
+  .team-member-card {
+    padding: 15px; /* ЗМІНЕНО: Всюди 15px для 768px */
+    min-height: 450px;
+  }
+  .member-photo {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 20px;
+    border-width: 5px;
+  }
+  .member-name {
+    font-size: 1.8em;
+  }
+  .member-role {
+    font-size: 1em;
+    margin-bottom: 15px;
+  }
+  .member-bio {
+    font-size: 0.9em;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+  .developer-skills-large h4 {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+  }
+  .developer-skills-large li {
+    padding: 6px 15px;
+    font-size: 0.8em;
+  }
+  .social-links {
+    gap: 5px;
+    margin-top: 20px;
+  }
+  .social-links .social-icon {
+    font-size: 1.5em;
+  }
+
+  /* Адаптація пагінації */
+  .pagination-controls {
+    gap: 8px;
+    padding: 10px 15px;
+    border-radius: 30px;
+    margin-top: 30px;
+  }
+  .pagination-controls button {
+    min-width: 38px;
+    height: 38px;
+    padding: 6px;
+    font-size: 0.9em;
+  }
+  .pagination-controls button svg {
+    font-size: 1.1em;
+  }
+  .pagination-controls .pagination-first-last {
+    min-width: 32px;
+    height: 32px;
+    padding: 5px;
+  }
+  .pagination-controls .pagination-first-last svg {
+    font-size: 1em;
+  }
+  .pagination-controls .pagination-ellipsis {
+    font-size: 1em;
+    padding: 10px 0;
+    min-width: 20px;
+  }
+  .pagination-controls .page-info {
+    font-size: 0.9em;
+    margin: 0 8px;
+  }
+}
+
+/* Додаткові медіа-запити для дуже малих екранів (наприклад, iPhone SE) */
+@media (max-width: 480px) {
+  .team-member-card {
+    padding: 15px; /* ЗМІНЕНО: Всюди 15px для 480px */
+    min-height: 400px;
+  }
+  .member-photo {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 15px;
+    border-width: 4px;
+  }
+  .member-name {
+    font-size: 1.6em;
+  }
+  .member-role {
+    font-size: 0.9em;
+  }
+  .member-bio {
+    font-size: 0.85em;
+    margin-bottom: 15px;
+  }
+  .developer-skills-large li {
+    padding: 5px 12px;
+    font-size: 0.75em;
+  }
+  .pagination-controls {
+    gap: 5px;
+    padding: 8px 10px;
+  }
+  .pagination-controls button {
+    min-width: 30px;
+    height: 30px;
+    padding: 5px;
+    font-size: 0.8em;
+  }
+  .pagination-controls button svg {
+    font-size: 1em;
+  }
+  .pagination-controls .page-info {
+    font-size: 0.8em;
+    margin: 0 5px;
+  }
+}

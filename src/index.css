@@ -1,0 +1,429 @@
+/* my-team-app/src/index.css */
+
+/* Global CSS Variables for Theme */
+/* Refined Pastel Light Theme */
+:root {
+  --background-color: #FDFDFD; /* Чистий, м'який білий фон */
+  --text-color: #4A4A4A; /* Глибокий, але м'який сірий для основного тексту */
+  --header-footer-bg: #FFFFFF; /* Світлий фон для хедера/футера */
+  --card-background: #FFFFFF; /* Світлий фон для карток */
+  --primary-color: #8ECDDD; /* Освіжаючий пастельний блакитно-зелений */
+  --secondary-color: #B2D8D8; /* М'який м'ятно-зелений */
+  --link-color: #7ABBCB; /* Трохи темніший відтінок primary для посилань */
+  --link-hover-color: #69A3B5; /* Ще темніший для ховеру посилань */
+  --border-color: #E8E8E8; /* Дуже світлий сірий для рамок */
+  --shadow-color: rgba(0, 0, 0, 0.06); /* Дуже легка тінь */
+  --footer-text-color: #6C757D; /* Середньо-сірий для тексту футера */
+  --footer-link-color: #7ABBCB; /* Колір посилань футера, як link-color */
+  --footer-link-hover-color: #69A3B5; /* Колір ховеру посилань футера, як link-hover-color */
+  --primary-color-rgb: 142, 205, 221; /* RGB для primary-color */
+  --hero-text-color: #FDFDFD; /* Світлий текст для Hero Section */
+  /* NEW: Secondary Button Hover Color for Light Theme */
+  --secondary-hover-color: #9EC7C7; /* A slightly darker, harmonious secondary color */
+}
+
+/* Dark Theme Variables */
+body.dark-theme {
+  --background-color: #1A1A2E; /* Глибокий темно-синій фон */
+  --text-color: #E0E0E0; /* Світлий сірий для читабельності */
+  --header-footer-bg: #16213E; /* Темніший синій для хедера/футера */
+  --card-background: #232D4B; /* Темніший синій для карток */
+  --primary-color: #8DEDF2; /* Яскравий аква-блакитний */
+  --secondary-color: #C0A0FF; /* М'який фіолетовий */
+  --link-color: #8DEDF2; /* Колір посилань, як primary */
+  --link-hover-color: #6ADFE5; /* Трохи темніший для ховеру посилань */
+  --border-color: #3A476F; /* Середньо-темний синій для рамок */
+  --shadow-color: rgba(0, 0, 0, 0.4); /* Більш виразна тінь */
+  --footer-text-color: #A0A0A0; /* Світліший сірий для тексту футера */
+  --footer-link-color: #8DEDF2; /* Колір посилань футера, як primary */
+  --footer-link-hover-color: #6ADFE5; /* Колір ховеру посилань футера, як link-hover-color */
+  --primary-color-rgb: 141, 237, 242; /* RGB для primary-color */
+  --hero-text-color: #E0E0E0; /* Світлий текст для Hero Section */
+  /* NEW: Secondary Button Hover Color for Dark Theme */
+  --secondary-hover-color: #A080E0; /* A slightly darker, harmonious secondary color for dark theme */
+}
+
+/* Base Styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1, h2, h3 {
+  color: var(--text-color);
+  margin-bottom: 20px;
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--link-hover-color);
+}
+
+.button {
+  display: inline-block;
+  padding: 12px 25px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.primary-button {
+  background-color: var(--primary-color);
+  /* Changed to var(--text-color) for better contrast in dark theme or a consistent white/black */
+  color: #FFF; /* Keep text white for primary buttons, as primary colors are light/bright */
+}
+
+.primary-button:hover {
+  background-color: var(--link-hover-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+.secondary-button {
+  background-color: var(--secondary-color);
+  /* Changed to var(--text-color) for better contrast in dark theme or a consistent white/black */
+  color: #FFF; /* Keep text white for secondary buttons, as secondary colors are light/bright */
+}
+
+.secondary-button:hover {
+  /* Using the new variable for consistency and theme adaptability */
+  background-color: var(--secondary-hover-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./assets/fon.png') no-repeat center center/cover;
+  text-align: center;
+  padding: 100px 20px;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.hero-section h2 {
+  font-size: 3em;
+  margin-bottom: 15px;
+  color: var(--hero-text-color);
+  transition: color 0.4s ease;
+}
+
+.hero-section p {
+  font-size: 1.2em;
+  max-width: 700px;
+  margin-bottom: 30px;
+  color: var(--hero-text-color);
+  transition: color 0.4s ease;
+}
+
+/* About, Contact Sections */
+.about-section, .contact-section, .team-section, .projects-section {
+  padding: 60px 0;
+  text-align: center;
+}
+
+.about-section p {
+  max-width: 800px;
+  margin: 0 auto 15px auto;
+}
+
+/* Team Grid / Project Grid */
+.team-grid, .project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.team-member-card, .project-card {
+  background-color: var(--card-background);
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px var(--shadow-color);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.team-member-card:hover, .project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.member-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 3px solid var(--primary-color);
+  transition: border-color 0.3s ease;
+}
+
+.team-member-card:hover .member-photo {
+  border-color: var(--link-hover-color);
+}
+
+.member-name {
+  font-size: 1.5em;
+  margin-bottom: 5px;
+  color: var(--text-color);
+}
+
+.member-role {
+  font-style: italic;
+  color: var(--secondary-color);
+  margin-bottom: 15px;
+}
+
+.social-links {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.social-links .social-icon {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 50%;
+  line-height: 30px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 0.8em;
+  transition: background-color 0.3s ease;
+}
+.social-links .social-icon:hover {
+  background-color: var(--link-hover-color);
+}
+
+.project-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 40px auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background-color: var(--card-background);
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px var(--shadow-color);
+  transition: background-color 0.3s ease;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  font-size: 1em;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+.contact-form button {
+  align-self: center;
+}
+
+
+@media (max-width: 768px) {
+  /* Global font size adjustments for better readability on smaller screens */
+  body {
+    font-size: 0.95em; /* Slightly reduce base font size */
+  }
+
+  /* Adjust headings to be more compact on tablets/larger phones */
+  h1 {
+    font-size: 2.5em;
+  }
+  h2 {
+    font-size: 2em;
+    margin-bottom: 15px;
+  }
+  h3 {
+    font-size: 1.5em;
+  }
+
+  /* Adjust Hero Section elements */
+  .hero-section {
+    padding: 80px 15px; /* Reduce padding to save vertical space */
+    min-height: 300px; /* Make hero section a bit shorter */
+  }
+
+  .hero-section h2 {
+    font-size: 2.2em; /* Smaller hero title */
+    margin-bottom: 10px;
+  }
+
+  .hero-section p {
+    font-size: 1.1em; /* Smaller hero text */
+    margin-bottom: 25px;
+  }
+
+  /* General container padding adjustment for better edge spacing */
+  .container {
+    padding: 15px; /* Reduce side padding for more content space */
+  }
+
+  /* Adjust vertical padding for main sections */
+  .about-section,
+  .contact-section,
+  .team-section,
+  .projects-section {
+    padding: 40px 0; /* Less vertical padding */
+  }
+
+  /* Team Grid / Project Grid adjustments */
+  .team-grid, .project-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Allow cards to be smaller */
+    gap: 20px; /* Reduce gap between cards */
+    margin-top: 30px;
+  }
+
+  .team-member-card, .project-card {
+    padding: 20px; /* Smaller padding inside cards */
+  }
+
+  .member-photo {
+    width: 120px; /* Smaller team member photos */
+    height: 120px;
+  }
+
+  .member-name {
+    font-size: 1.3em; /* Smaller name font */
+  }
+
+  .member-role {
+    font-size: 0.9em; /* Smaller role font */
+  }
+
+  /* Contact Form adjustments */
+  .contact-form {
+    padding: 25px; /* Smaller padding inside the form */
+    margin-top: 30px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    padding: 10px; /* Slightly smaller input fields */
+  }
+
+  /* Button adjustments */
+  .button {
+    padding: 10px 20px; /* Make buttons slightly smaller */
+    font-size: 0.95em;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Further font size adjustments for very small phones */
+  body {
+    font-size: 0.9em;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+  h2 {
+    font-size: 1.7em;
+  }
+
+  /* Even smaller Hero Section elements */
+  .hero-section {
+    padding: 60px 10px;
+    min-height: 250px;
+  }
+
+  .hero-section h2 {
+    font-size: 1.8em;
+  }
+
+  .hero-section p {
+    font-size: 1em;
+    margin-bottom: 20px;
+  }
+
+  /* Tighter container padding */
+  .container {
+    padding: 10px;
+  }
+
+  /* Tighter section padding */
+  .about-section,
+  .contact-section,
+  .team-section,
+  .projects-section {
+    padding: 30px 0;
+  }
+
+  /* Ensure cards stack nicely on very small screens */
+  .team-grid, .project-grid {
+    grid-template-columns: 1fr; /* Force single column layout */
+    gap: 15px; /* Smaller gap */
+  }
+
+  .team-member-card, .project-card {
+    padding: 15px; /* Even smaller padding */
+  }
+
+  .member-photo {
+    width: 100px; /* Smallest member photos */
+    height: 100px;
+  }
+
+  .member-name {
+    font-size: 1.2em;
+  }
+
+  .social-links {
+    gap: 10px; /* Closer social icons */
+  }
+
+  /* Buttons on very small screens */
+  .button {
+    padding: 8px 18px;
+    font-size: 0.85em;
+  }
+
+  .contact-form {
+    padding: 20px; /* Smallest form padding */
+    gap: 10px;
+  }
+}

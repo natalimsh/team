@@ -1,0 +1,38 @@
+[
+  {
+    "id": "member1",
+    "name": "Анна Коваленко",
+    "role": "Lead Frontend Developer",
+    "bio": "Експерт з React та сучасних веб-технологій. Забезпечує високу продуктивність та чудовий користувацький досвід.",
+    "photo": "/assets/human.jpg",
+    "social": {
+      "linkedin": "https://linkedin.com/in/annakovalenko",
+      "github": "https://github.com/annak"
+    },
+    "skills": ["React", "JavaScript", "HTML5", "CSS3", "Redux", "TypeScript"]
+  },
+  {
+    "id": "member2",
+    "name": "Петро Захарченко",
+    "role": "Backend Developer",
+    "bio": "Будує надійні та масштабовані серверні рішення на Node.js та Python. Досвідчений у роботі з базами даних.",
+    "photo": "/assets/human.jpg",
+    "social": {
+      "linkedin": "https://linkedin.com/in/petrozakharchenko",
+      "github": "https://github.com/petroz"
+    },
+    "skills": ["Node.js", "Python", "Express", "MongoDB", "PostgreSQL", "REST API"]
+  },
+  {
+    "id": "member3",
+    "name": "Олена Сидоренко",
+    "role": "UI/UX Designer",
+    "bio": "Створює інтуїтивно зрозумілі та візуально привабливі інтерфейси. Фокусується на користувацькому досвіді.",
+    "photo": "/assets/human.jpg",
+    "social": {
+      "linkedin": "https://linkedin.com/in/olenasydorenko",
+      "github": null
+    },
+    "skills": ["Figma", "Sketch", "Adobe XD", "User Research", "Prototyping", "Wireframing"]
+  }
+]
