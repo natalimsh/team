@@ -1,0 +1,90 @@
+#contact-form-section {
+  background: linear-gradient(to bottom right, #ffffff, #f0f8ff);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.6s ease-in-out;
+  max-width: 600px;
+  margin: 0 auto;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+#contact-form-section h2 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #1e40af;
+  margin-bottom: 0.5rem;
+  text-align: left; /* вирівнювання по лівому краю */
+}
+
+#contact-form-section p {
+  text-align: left; /* вирівнювання по лівому краю */
+  color: #555;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+#contact-form-section input,
+#contact-form-section textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  transition: all 0.3s ease-in-out;
+  box-sizing: border-box;
+}
+
+#contact-form-section input:focus,
+#contact-form-section textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+  outline: none;
+}
+
+#contact-form-section textarea {
+  resize: none;
+  min-height: 140px;
+}
+
+#contact-form-section button {
+  background-color: #2563eb;
+  color: white;
+  padding: 0.8rem 1.2rem;
+  border: none;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+  display: block;
+  margin-left: auto; /* кнопка справа */
+}
+
+#contact-form-section button:hover {
+  background-color: #1e3a8a;
+}
+
+#contact-form-section button:disabled {
+  background-color: #a5b4fc;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+#contact-form-section .status-message {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #333;
+  text-align: left; /* вирівнювання по лівому краю */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
