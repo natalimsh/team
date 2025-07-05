@@ -8,7 +8,7 @@ require('dotenv').config(); // Для завантаження змінних с
 // Створюємо екземпляр Express-додатку
 const app = express();
 // Визначаємо порт, на якому буде працювати сервер. За замовчуванням 5000.
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || https://team-ivory-zeta.vercel.app/;
 
 // Middleware для дозволу CORS-запитів
 // Це дозволяє вашому React-додатку (зазвичай на http://localhost:3000)
