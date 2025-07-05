@@ -17,7 +17,7 @@ function ContactForm() {
         setStatus('Надсилання повідомлення...');
 
         try {
-            const backendApiUrl = 'http://localhost:5000/api/send-email';
+            const backendApiUrl = 'https://team-ivory-zeta.vercel.app/';
             const response = await fetch(backendApiUrl, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
