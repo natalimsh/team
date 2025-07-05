@@ -15,7 +15,7 @@ const port = process.env.PORT || 5000;
 // надсилати запити до цього бекенду.
 // У продакшені замініть 'http://localhost:3000' на реальний домен вашого фронтенду.
 app.use(cors({
-    origin: 'http://localhost:3000' // Або ваш домен, наприклад, 'https://your-react-app.com'
+    origin: 'https://team-ivory-zeta.vercel.app/' // Або ваш домен, наприклад, 'https://your-react-app.com'
 }));
 // Middleware для парсингу JSON-тіла запитів
 // Це дозволяє серверу розуміти дані, які надсилаються з форми у форматі JSON.
@@ -83,5 +83,5 @@ app.post('/api/send-email', async (req, res) => {
 
 // Запускаємо сервер на визначеному порту
 app.listen(port, () => {
-    console.log(`Бекенд-сервер запущено на http://localhost:${port}`);
+    console.log(`Бекенд-сервер запущено на https://team-ivory-zeta.vercel.app/`);
 });
